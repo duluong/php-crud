@@ -1,8 +1,42 @@
 <?php
-// set page headers
-$page_title = "Product CRUD example with PHP and Postgresql";
-include_once 'view/header.php';
+	// set page headers
+	$page_title = "Product CRUD example with PHP and Postgresql";
+	include_once 'view/header.php';
 
+	$action = $_POST["action"] ;
+	$id = $_POST["id"] ;
+	$prodname = $_POST["prodname"] ;
+	$description = $_POST["description"] ;
+	$price = $_POST["price"] ;
+
+	include_once 'model/product.php';
+	$productCRUD = new Product();
+	var $products;
+
+	switch ($action) {
+		case 'Search':
+			$products = $productCRUD->searchProduct($prodname, $description, $price);
+			break;
+		
+		case 'Create':
+			$ret = $productCRUD->addProduct($prodname, $description, $price);
+			$products = $productCRUD->getAllProducts();
+			break;
+
+		case 'Update':
+			$ret = $productCRUD->updateProduct($id, $prodname, $description, $price);
+			$products = $productCRUD->getAllProducts();
+			break;
+
+		case 'Delete':
+			$ret = $productCRUD->deleteProduct($id);
+			$products = $productCRUD->getAllProducts();
+			break;
+
+		default:
+			$products = $productCRUD->getAllProducts();
+			break;
+	}
 ?>
 
 <form class="form-horizontal" method="POST">
@@ -16,7 +50,7 @@ include_once 'view/header.php';
 	    </div>
 	    <div class="col-sm-3">
 <!-- 	      <button type="button" class="btn">Create</button> -->
-	      <input type = "submit" class="btn" name = "submit" value = "Create"> 
+	      <input type = "submit" class="btn" name = "action" value = "Create"> 
 	    </div>
 	  </div>
 
@@ -28,7 +62,7 @@ include_once 'view/header.php';
 
 	    <div class="col-sm-3">
 	      <!-- <button type="button" class="btn">Update</button> -->
-	      <input type = "submit" class="btn" name = "submit" value = "Update"> 
+	      <input type = "submit" class="btn" name = "action" value = "Update"> 
 	    </div>
 	  </div>
 
@@ -40,14 +74,14 @@ include_once 'view/header.php';
 
 	    <div class="col-sm-3">
 	      <!-- <button type="button" class="btn">Delete</button> -->
-	      <input type = "submit" class="btn" name = "submit" value = "Delete"> 
+	      <input type = "submit" class="btn" name = "action" value = "Delete"> 
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	     <div class="col-sm-7">
 	      <!-- <button type="button" class="btn pull-right">Search</button> -->
-	      <input type = "submit" class="btn pull-right" name = "submit" value = "Search"> 
+	      <input type = "submit" class="btn pull-right" name = "action" value = "Search"> 
 	    </div>
 	  </div>
 
@@ -64,9 +98,6 @@ include_once 'view/header.php';
 	    <tbody>
 
 		<?php
-			include_once 'model/product.php';
-			$products = (new Product())->getAllProducts();
-
 			$i = 0;
 			while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
 			    echo "\t<tr>\n";
