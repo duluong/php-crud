@@ -122,7 +122,7 @@
 			while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
 			    echo "\t<tr>\n";
 			    echo "\t\t<td>" . ++$i . " </td>\n";
-			    echo "\t\t<td class=\"id\">" . $row["id"] . " </td>\n";
+			    echo "\t\t<td class=\"id hidden\">" . $row["id"] . " </td>\n";
 			    echo "\t\t<td class=\"name\">" . $row["name"] ." </td>\n";
 			    echo "\t\t<td class=\"description\">" . $row["description"] ." </td>\n";
 			    echo "\t\t<td class=\"price\">" . $row["price"] ." </td>\n";
