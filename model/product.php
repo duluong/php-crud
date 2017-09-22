@@ -11,7 +11,7 @@ class Product{
     }
 
     public function getAllProducts(){
-        $sql = "select * from PRODUCT ;";
+        $sql = "select * from PRODUCT order by name;";
 
         $ret = pg_query($this->dbConn, $sql);
 
@@ -36,7 +36,7 @@ class Product{
             $sql .= "AND price = '$price' ";
         }
 
-        $sql .= "; ";
+        $sql .= "order by name ; ";
 
         $ret = pg_query($this->dbConn, $sql);
         if(!$ret) {

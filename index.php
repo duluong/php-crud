@@ -109,6 +109,7 @@
 	    <thead>
 	      <tr>
 	        <th>#</th>
+	        <th class="hidden">Product ID</th>
 	        <th>Name</th>
 	        <th>Description</th>
 	        <th>Price</th>
@@ -117,9 +118,10 @@
 	    <tbody>
 
 		<?php
-			/*$i = 0;*/
+			$i = 0;
 			while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
 			    echo "\t<tr>\n";
+			    echo "\t\t<td>" . ++$i . " </td>\n";
 			    echo "\t\t<td class=\"id\">" . $row["id"] . " </td>\n";
 			    echo "\t\t<td class=\"name\">" . $row["name"] ." </td>\n";
 			    echo "\t\t<td class=\"description\">" . $row["description"] ." </td>\n";
