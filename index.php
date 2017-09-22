@@ -12,9 +12,11 @@ include_once 'view/header.php';
 	    <label class="control-label col-sm-2" for="prodname">Product Name:</label>
 	    <div class="col-sm-5">
 	      <input type="text" class="form-control" id="prodname" name="prodname" placeholder="Enter Product Name">
+	      <input type="hidden" class="form-control" id="id" name="id">
 	    </div>
 	    <div class="col-sm-3">
-	      <button type="button" class="btn">Create</button>
+<!-- 	      <button type="button" class="btn">Create</button> -->
+	      <input type = "submit" class="btn" name = "submit" value = "Create"> 
 	    </div>
 	  </div>
 
@@ -30,9 +32,13 @@ include_once 'view/header.php';
 	  </div>
 
 	  <div class="form-group">
-	    <label class="control-label col-sm-2" for="price">Age:</label>
+	    <label class="control-label col-sm-2" for="price">Price:</label>
 	    <div class="col-sm-5">
 	      <input type="text" class="form-control" id="price" name="price" placeholder="Enter Product Price">
+	    </div>
+
+	    <div class="col-sm-3">
+	      <button type="button" class="btn">Delete</button>
 	    </div>
 	  </div>
 
