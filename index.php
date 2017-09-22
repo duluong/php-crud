@@ -136,7 +136,7 @@
 	  </div>
 </form>
 
-<script src="js/crud.js"></script>
+
 
 <?php
 include_once 'view/footer.php';
