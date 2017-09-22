@@ -65,8 +65,6 @@
 ?>
 
 <form class="form-horizontal" method="POST">
-
-	<div class="container">
 	  <div class="form-group">
 	    <label class="control-label col-sm-2" for="prodname">Product Name:</label>
 	    <div class="col-sm-5">
@@ -74,8 +72,7 @@
 	      <input type="hidden" class="form-control" id="id" name="id">
 	    </div>
 	    <div class="col-sm-3">
-<!-- 	      <button type="button" class="btn">Create</button> -->
-	      <input type = "submit" class="btn btn-info" name = "action" value = "Create"> 
+	      <input type = "submit" class="btn" name = "action" value = "Create"> 
 	    </div>
 	  </div>
 
@@ -86,8 +83,7 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <!-- <button type="button" class="btn">Update</button> -->
-	      <input type = "submit" class="btn btn-info" name = "action" value = "Update"> 
+	      <input type = "submit" class="btn" name = "action" value = "Update"> 
 	    </div>
 	  </div>
 
@@ -98,15 +94,13 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <!-- <button type="button" class="btn">Delete</button> -->
-	      <input type = "submit" class="btn btn-info" name = "action" value = "Delete"> 
+	      <input type = "submit" class="btn" name = "action" value = "Delete"> 
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	     <div class="col-sm-7">
-	      <!-- <button type="button" class="btn pull-right">Search</button> -->
-	      <input type = "submit" class="btn btn-info pull-right" name = "action" value = "Search"> 
+	      <input type = "submit" class="btn pull-right" name = "action" value = "Search"> 
 	    </div>
 	  </div>
 
@@ -139,7 +133,7 @@
 
 	    </tbody>
 	  </table>
-	</div>
+	  </div>
 </form>
 
 
