@@ -3,36 +3,81 @@
 $page_title = "Product CRUD example with PHP and Postgresql";
 include_once 'view/header.php';
 
+?>
 
-echo "<div class='right-button-margin'>";
-    echo "<a href='create_product.php' class='btn btn-default pull-right'>Create Product</a>";
-echo "</div>";
+<form class="form-horizontal">
+
+	<div class="container">
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="prodname">Product Name:</label>
+	    <div class="col-sm-5">
+	      <input type="text" class="form-control" id="prodname" name="prodname" placeholder="Enter Product Name">
+	    </div>
+	    <div class="col-sm-3">
+	      <button type="button" class="btn">Create</button>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="description">Description:</label>
+	    <div class="col-sm-5">
+	      <input type="text" class="form-control" id="description" name="description" placeholder="Enter Product Description">
+	    </div>
+
+	    <div class="col-sm-3">
+	      <button type="button" class="btn">Update</button>
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	    <label class="control-label col-sm-2" for="price">Age:</label>
+	    <div class="col-sm-5">
+	      <input type="text" class="form-control" id="price" name="price" placeholder="Enter Product Price">
+	    </div>
+	  </div>
+
+	  <div class="form-group">
+	     <div class="col-sm-7">
+	      <button type="button" class="btn pull-right">Search</button>
+	    </div>
+	  </div>
+
+	  <div class="table-responsive">
+	  <table class="table table-bordered table-hover">
+	    <thead>
+	      <tr>
+	        <th>#</th>
+	        <th>Name</th>
+	        <th>Description</th>
+	        <th>Price</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+
+		<?php
+			include_once 'model/product.php';
+			$products = (new Product())->getAllProducts();
+
+			$i = 0;
+			while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
+			    echo "\t<tr>\n";
+			    echo "\t\t<td>" . ++$i . " </td>\n";
+			    echo "\t\t<td>" . $row["name"] ." </td>\n";
+			    echo "\t\t<td>" . $row["description"] ." </td>\n";
+			    echo "\t\t<td>" . $row["price"] ." </td>\n";
+			    echo "\t</tr>\n";
+			}
+
+			// Free resultset
+			pg_free_result($products);
+		?>
+
+	    </tbody>
+	  </table>
+	</div>
+</form>
 
 
-include_once 'model/product.php';
-$products = (new Product())->getAllProducts();
-
-// Printing results in HTML
-echo "<table>\n";
-$i = 0;
-while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
-    echo "\t<tr>\n";
-    echo "\t\t<td>" . ++i ." </td>\n";
-    echo "\t\t<td>" . $row["name"] ." </td>\n";
-    echo "\t\t<td>" . $row["description"] ." </td>\n";
-    echo "\t\t<td>" . $row["price"] ." </td>\n";
-
-   /* foreach ($row as $col_value) {
-        echo "\t\t<td>$col_value</td>\n";
-    }*/
-    echo "\t</tr>\n";
-}
-echo "</table>\n";
-
-// Free resultset
-pg_free_result($products);
-
-
-
+<?php
 include_once 'view/footer.php';
 ?>
