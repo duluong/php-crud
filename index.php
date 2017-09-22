@@ -83,7 +83,7 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <input type = "submit" id="update" class="btn invisible" name = "action" value = "Update"> 
+	      <input type = "submit" id="update" class="btn hidden" name = "action" value = "Update"> 
 	    </div>
 	  </div>
 
@@ -94,7 +94,7 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <input type = "submit" id="delete" class="btn invisible" name = "action" value = "Delete"> 
+	      <input type = "submit" id="delete" class="btn hidden" name = "action" value = "Delete"> 
 	    </div>
 	  </div>
 
