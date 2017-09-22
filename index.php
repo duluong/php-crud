@@ -11,7 +11,7 @@
 
 	include_once 'model/product.php';
 	$productCRUD = new Product();
-	var $products;
+	$products = null;
 
 	switch ($action) {
 		case 'Search':

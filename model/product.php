@@ -47,7 +47,7 @@ class Product{
     }
 
     public function addProduct($name, $description, $price){
-        $now = new DateTime()->format('Y-m-d H:i:s');
+        $now = (new DateTime())->format('Y-m-d H:i:s');
         $sql = "insert into PRODUCT('name', 'description', 'price', 'created', 'modified') Values($name, $description, $price, $now, $now) ;";
 
         $ret = pg_query($this->dbConn, $sql);
@@ -59,7 +59,7 @@ class Product{
     }
 
     public function updateProduct($id, $name, $description, $price){
-        $now = new DateTime()->format('Y-m-d H:i:s');
+        $now = (new DateTime())->format('Y-m-d H:i:s');
         $sql = "update PRODUCT set name=$name, 'description'=$description, price=$price, modified=$now where id=$id ;";
 
         $ret = pg_query($this->dbConn, $sql);
