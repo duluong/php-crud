@@ -70,7 +70,7 @@ class Product{
     }
 
     public function deleteProduct($id){
-        $sql = "delete PRODUCT where id = '$id' ;";
+        $sql = "delete from PRODUCT where id = '$id' ;";
 
         $ret = pg_query($this->dbConn, $sql);
 

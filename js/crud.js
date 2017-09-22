@@ -12,6 +12,6 @@ $("#productList").on('click','tr',function(e){
     $("input#description").val(description);
     $("input#price").val(price);
 
-    $("input#update").show();
-    $("input#delete").show();
+    $("input#update").removeClass('hidden');
+    $("input#delete").removeClass('hidden');
 }); 
