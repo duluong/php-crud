@@ -25,15 +25,15 @@ class Product{
         $sql = "select * from PRODUCT where true ";
 
         if ($name){
-            $sql .= "AND name = $name ";
+            $sql .= "AND name = '$name' ";
         }
 
         if ($description){
-            $sql .= "AND description = $description ";
+            $sql .= "AND description = '$description' ";
         }
 
         if ($price){
-            $sql .= "AND price = $price ";
+            $sql .= "AND price = '$price' ";
         }
 
         $sql .= "; ";
