@@ -7,13 +7,13 @@ class Product{
 
     function __construct(){
        $db = new Database();
-       $this->$dbConn = $db->getConnection();
+       $this->dbConn = $db->getConnection();
     }
 
     public function getAllProducts(){
         $sql = "select * from PRODUCT ;";
 
-        $ret = pg_query($this->$dbConn, $sql);
+        $ret = pg_query($this->dbConn, $sql);
 
         if(!$ret) {
             echo "Can't get product infor";
