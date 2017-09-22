@@ -105,7 +105,7 @@
 	  </div>
 
 	  <div class="table-responsive">
-	  <table class="table table-bordered table-hover">
+	  <table id="productList" class="table table-bordered table-hover">
 	    <thead>
 	      <tr>
 	        <th>#</th>
@@ -136,6 +136,7 @@
 	  </div>
 </form>
 
+<script src="js/crud.js"></script>
 
 <?php
 include_once 'view/footer.php';
