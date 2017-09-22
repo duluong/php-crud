@@ -7,8 +7,8 @@ class Product{
     private $dbConn;
 
     function __construct(){
-       $db = new Database();
-       $dbConn = $db->getConnection();
+       $this->$db = new Database();
+       $this->$dbConn = $this->$db->getConnection();
     }
 
     public function getAllProducts(){

@@ -10,15 +10,15 @@ class Database{
     public $conn;
 
     public function getConnection(){
-        this->conn = null;
+        $this->conn = null;
 
         try{
-            this->conn = pg_connect( "$host $port $dbname $credentials" );
+            $this->conn = pg_connect( "$host $port $dbname $credentials" );
         } catch (Exception $e) {
             echo "Connection error: " . $e->getMessage();
         }
 
-        return this->conn;
+        return $this->conn;
     }
 }
 ?>
