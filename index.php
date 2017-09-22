@@ -1,6 +1,6 @@
 <?php
 	// set page headers
-	$page_title = "Product CRUD example with PHP and Postgresql";
+	$page_title = "Products CRUD example with PHP and Postgresql";
 	include_once 'view/header.php';
 
 	function test_input($data) {
