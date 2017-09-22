@@ -3,18 +3,17 @@ include_once 'database.php';
 
 class Product{
     
-    private $db;
     private $dbConn;
 
     function __construct(){
-       $this->$db = new Database();
-       $this->$dbConn = $this->$db->getConnection();
+       $db = new Database();
+       $this->$dbConn = $db->getConnection();
     }
 
     public function getAllProducts(){
         $sql = "select * from PRODUCT ;";
 
-        $ret = pg_query($dbConn, $sql);
+        $ret = pg_query($this->$dbConn, $sql);
 
         if(!$ret) {
             echo "Can't get product infor";
