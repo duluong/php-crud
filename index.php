@@ -5,7 +5,7 @@ include_once 'view/header.php';
 
 ?>
 
-<form class="form-horizontal">
+<form class="form-horizontal" method="POST">
 
 	<div class="container">
 	  <div class="form-group">
@@ -27,7 +27,8 @@ include_once 'view/header.php';
 	    </div>
 
 	    <div class="col-sm-3">
-	      <button type="button" class="btn">Update</button>
+	      <!-- <button type="button" class="btn">Update</button> -->
+	      <input type = "submit" class="btn" name = "submit" value = "Update"> 
 	    </div>
 	  </div>
 
@@ -38,13 +39,15 @@ include_once 'view/header.php';
 	    </div>
 
 	    <div class="col-sm-3">
-	      <button type="button" class="btn">Delete</button>
+	      <!-- <button type="button" class="btn">Delete</button> -->
+	      <input type = "submit" class="btn" name = "submit" value = "Delete"> 
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	     <div class="col-sm-7">
-	      <button type="button" class="btn pull-right">Search</button>
+	      <!-- <button type="button" class="btn pull-right">Search</button> -->
+	      <input type = "submit" class="btn" name = "submit" value = "Search"> 
 	    </div>
 	  </div>
 
