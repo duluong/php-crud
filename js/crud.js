@@ -7,12 +7,11 @@ $("#productList").on('click','tr',function(e){
     var price = $(this).closest('tr').children('td.price').text();
 
 
-    $("input#prodId").value = id;
-    $("input#prodname").value = name;
-    $("input#description").value = description;
-    $("input#price").value = price;
+    $("input#prodId").val(id);
+    $("input#prodname").val(name);
+    $("input#description").val(description);
+    $("input#price").val(price);
 
-
-    alert(id);
-
+    $("input#update").show();
+    $("input#delete").show();
 }); 
