@@ -11,15 +11,15 @@
     }
 
 	// define variables and set to empty values
-	$action = $id = $prodname = $description = $price = "";
+	$action = $prodId = $prodname = $description = $price = "";
      
 	if ($_POST["action"] != null) {
 		$action = $_POST["action"] ;
 		$action = test_input($action);
 	}
-	if ($_POST["id"]  != null) {
-		$id = $_POST["id"] ;
-		$id = test_input($id);
+	if ($_POST["prodId"]  != null) {
+		$prodId = $_POST["prodId"] ;
+		$prodId = test_input($prodId);
 	} 
 	if ($_POST["prodname"]  != null) {
 		$prodname = $_POST["prodname"] ;
@@ -49,12 +49,12 @@
 			break;
 
 		case 'Update':
-			$ret = $productCRUD->updateProduct($id, $prodname, $description, $price);
+			$ret = $productCRUD->updateProduct($prodId, $prodname, $description, $price);
 			$products = $productCRUD->getAllProducts();
 			break;
 
 		case 'Delete':
-			$ret = $productCRUD->deleteProduct($id);
+			$ret = $productCRUD->deleteProduct($prodId);
 			$products = $productCRUD->getAllProducts();
 			break;
 
@@ -68,8 +68,8 @@
 	  <div class="form-group">
 	    <label class="control-label col-sm-2" for="prodname">Product Name:</label>
 	    <div class="col-sm-5">
-	      <input type="text" class="form-control" id="prodname" name="prodname" placeholder="Enter Product Name">
-	      <input type="hidden" class="form-control" id="id" name="id">
+	    	<input type="hidden" class="form-control" id="prodId" name="prodId">
+	        <input type="text" class="form-control" id="prodname" name="prodname" placeholder="Enter Product Name">
 	    </div>
 	    <div class="col-sm-3">
 	      <input type = "submit" class="btn" name = "action" value = "Create"> 
@@ -117,10 +117,10 @@
 	    <tbody>
 
 		<?php
-			$i = 0;
+			/*$i = 0;*/
 			while ($row = pg_fetch_array($products, null, PGSQL_ASSOC)) {
 			    echo "\t<tr>\n";
-			    echo "\t\t<td class=\"num\">" . ++$i . " </td>\n";
+			    echo "\t\t<td class=\"id\">" . $row["id"] . " </td>\n";
 			    echo "\t\t<td class=\"name\">" . $row["name"] ." </td>\n";
 			    echo "\t\t<td class=\"description\">" . $row["description"] ." </td>\n";
 			    echo "\t\t<td class=\"price\">" . $row["price"] ." </td>\n";
