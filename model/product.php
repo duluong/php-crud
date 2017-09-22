@@ -29,11 +29,11 @@ class Product{
         }
 
         if ($description){
-            $sql .= "AND description = '%$description%' ";
+            $sql .= "AND description like '%$description%' ";
         }
 
         if ($price){
-            $sql .= "AND price = '%$price%' ";
+            $sql .= "AND price = '$price' ";
         }
 
         $sql .= "; ";

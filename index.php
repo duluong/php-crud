@@ -13,23 +13,23 @@
 	// define variables and set to empty values
 	$action = $id = $prodname = $description = $price = "";
      
-	if ($_POST["action"]) {
+	if ($_POST["action"] != null) {
 		$action = $_POST["action"] ;
 		$action = test_input($action);
 	}
-	if ($_POST["id"]) {
+	if ($_POST["id"]  != null) {
 		$id = $_POST["id"] ;
 		$id = test_input($id);
 	} 
-	if ($_POST["prodname"]) {
+	if ($_POST["prodname"]  != null) {
 		$prodname = $_POST["prodname"] ;
 		$prodname = test_input($prodname);
 	} 
-	if ($_POST["description"]) {
+	if ($_POST["description"]  != null) {
 		$description = $_POST["description"] ;
 		$description = test_input($description);
 	} 
-	if ($_POST["price"]) {
+	if ($_POST["price"]  != null) {
 		$price = $_POST["price"] ;
 		$price = test_input($price);
 	}
