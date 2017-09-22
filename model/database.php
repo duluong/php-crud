@@ -5,6 +5,7 @@ class Database{
     public $conn;
 
     public function getConnection(){
+        // pls change value by your database configuration.
         $host        = "host =127.0.0.1";
         $port        = "port =5432";
         $dbname      = "dbname =postgres";
