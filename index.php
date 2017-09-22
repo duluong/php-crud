@@ -47,7 +47,7 @@ include_once 'view/header.php';
 	  <div class="form-group">
 	     <div class="col-sm-7">
 	      <!-- <button type="button" class="btn pull-right">Search</button> -->
-	      <input type = "submit" class="btn" name = "submit" value = "Search"> 
+	      <input type = "submit" class="btn pull-right" name = "submit" value = "Search"> 
 	    </div>
 	  </div>
 
