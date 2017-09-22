@@ -38,7 +38,7 @@ class Product{
 
         $sql .= "; ";
 
-        $ret = pg_query($dbConn, $sql);
+        $ret = pg_query($this->dbConn, $sql);
         if(!$ret) {
             echo "Can't get product infor";
         }

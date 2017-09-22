@@ -3,11 +3,36 @@
 	$page_title = "Product CRUD example with PHP and Postgresql";
 	include_once 'view/header.php';
 
-	$action = $_POST["action"] ;
-	$id = $_POST["id"] ;
-	$prodname = $_POST["prodname"] ;
-	$description = $_POST["description"] ;
-	$price = $_POST["price"] ;
+	function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+	// define variables and set to empty values
+	$action = $id = $prodname = $description = $price = "";
+     
+	if ($_POST["action"]) {
+		$action = $_POST["action"] ;
+		$action = test_input($action);
+	}
+	if ($_POST["id"]) {
+		$id = $_POST["id"] ;
+		$id = test_input($id);
+	} 
+	if ($_POST["prodname"]) {
+		$prodname = $_POST["prodname"] ;
+		$prodname = test_input($prodname);
+	} 
+	if ($_POST["description"]) {
+		$description = $_POST["description"] ;
+		$description = test_input($description);
+	} 
+	if ($_POST["price"]) {
+		$price = $_POST["price"] ;
+		$price = test_input($price);
+	}
 
 	include_once 'model/product.php';
 	$productCRUD = new Product();
