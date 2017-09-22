@@ -9,21 +9,25 @@
 * jQuery
 
 ## 2. Modules Description
-#### Create Product table with dumy data : data/product.sql
+### data/product.sql
+Create Product table and insert dumy data.
 Please run this first by psql.
 
-#### DataBase Connection : model/database.php
-Create PostgreSQL connection. Database connect configuration is configed here.
+### model/database.php
+PostgreSQL DataBase Connection class.
+Database connection configuration is configed here.
 
-#### Product CRUD class : model/product.php
+### model/product.php
+Product CRUD class.
 Handle with DB to retrieve, create, update, and delete the product's data.
 
-#### Header & Footer : view/header.php & footer.php
+### view/header.php & footer.php
+Header & Footer
 
-#### Main page: index.php
+### index.php
+Main page.
 Perform all CRUD functions. All actions (Search, Create, Update, Delete) in one page.
 
-6. 2.6  
 
 ## Apendix: Setting up environment
 
