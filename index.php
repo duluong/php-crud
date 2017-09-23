@@ -1,6 +1,6 @@
 <?php
 	// set page headers
-	$page_title = "Products CRUD example with PHP and Postgresql";
+	$page_title = "The very Simple CRUD example with PHP and Postgresql";
 	include_once 'view/header.php';
 
 	function test_input($data) {
@@ -11,7 +11,7 @@
     }
 
 	// define variables and set to empty values
-	$action = $prodId = $prodname = $description = $price = "";
+	$action = $prodId = $prodName = $description = $price = "";
      
 	if ($_POST["action"] != null) {
 		$action = $_POST["action"] ;
@@ -21,9 +21,9 @@
 		$prodId = $_POST["prodId"] ;
 		$prodId = test_input($prodId);
 	} 
-	if ($_POST["prodname"]  != null) {
-		$prodname = $_POST["prodname"] ;
-		$prodname = test_input($prodname);
+	if ($_POST["prodName"]  != null) {
+		$prodName = $_POST["prodName"] ;
+		$prodName = test_input($prodName);
 	} 
 	if ($_POST["description"]  != null) {
 		$description = $_POST["description"] ;
@@ -40,16 +40,16 @@
 
 	switch ($action) {
 		case 'Search':
-			$products = $productCRUD->searchProduct($prodname, $description, $price);
+			$products = $productCRUD->searchProduct($prodName, $description, $price);
 			break;
 		
 		case 'Create':
-			$ret = $productCRUD->addProduct($prodname, $description, $price);
+			$ret = $productCRUD->addProduct($prodName, $description, $price);
 			$products = $productCRUD->getAllProducts();
 			break;
 
 		case 'Update':
-			$ret = $productCRUD->updateProduct($prodId, $prodname, $description, $price);
+			$ret = $productCRUD->updateProduct($prodId, $prodName, $description, $price);
 			$products = $productCRUD->getAllProducts();
 			break;
 
@@ -66,10 +66,10 @@
 
 <form class="form-horizontal" method="POST">
 	  <div class="form-group">
-	    <label class="control-label col-sm-2" for="prodname">Product Name:</label>
+	    <label class="control-label col-sm-2" for="prodName">Product Name:</label>
 	    <div class="col-sm-5">
 	    	<input type="hidden" class="form-control" id="prodId" name="prodId">
-	        <input type="text" class="form-control" id="prodname" name="prodname" placeholder="Enter Product Name">
+	        <input type="text" class="form-control" id="prodName" name="prodName" placeholder="Enter Product Name">
 	    </div>
 	    <div class="col-sm-3">
 	      <input type = "submit" class="btn" name = "action" value = "Create"> 
