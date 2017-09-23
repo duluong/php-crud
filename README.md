@@ -42,7 +42,7 @@ sudo chkconfig httpd on <br>
 
 ### install PostgreSQL server & client
 yum install postgresql96-server <br>
-yum install postgresql96 <br> <br>
+yum install postgresql96 <br> 
 
 
 service postgresql-9.6 initdb <br>
@@ -63,10 +63,10 @@ Output <br>
 Enter name of role to add: ec2-user <br>
 Shall the new role be a superuser? (y/n) y <br>
 
-\# update config file of Postgres to allow connect. <br>
+\# Update config file of Postgres to allow connect. <br>
 config file: /var/lib/pgsql/9.6/data/pg_hba.conf <br>
 
-\# file the following line and change from ident to trust to allow simple connect from the same host. <br>
+\# Find the following line and change from 'ident' to 'trust' to allow simple connect from the same host. <br>
 #host    all             all             127.0.0.1/32            ident <br>
 host    all             all             127.0.0.1/32            trust <br>
 
