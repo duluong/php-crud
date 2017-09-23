@@ -8,7 +8,7 @@
  	
     <div class='page-footer'>
         <p>
-    	copyright WE
+    	copyright ABC...
     	</p>
     </div>
 </body>
