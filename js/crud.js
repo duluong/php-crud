@@ -8,7 +8,7 @@ $("#productList").on('click','tr',function(e){
 
 
     $("input#prodId").val(id);
-    $("input#prodname").val(name);
+    $("input#prodName").val(name);
     $("input#description").val(description);
     $("input#price").val(price);
 
