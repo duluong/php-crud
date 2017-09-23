@@ -110,7 +110,7 @@
 
 	  <div class="table-responsive">
 	  <table id="productList" class="table table-bordered table-hover">
-	    <thead>
+	    <thead class="bg-info text-white">
 	      <tr>
 	        <th>#</th>
 	        <th class="hidden">Product ID</th>
