@@ -76,7 +76,7 @@
 	        <input type="text" class="form-control" id="prodName" name="prodName" placeholder="Enter Product Name">
 	    </div>
 	    <div class="col-sm-3">
-	      <input type = "submit" class="btn" name = "action" value = "Create"> 
+	      <input type = "submit" class="btn btn-primary btn-sm" name = "action" value = "Create"> 
 	    </div>
 	  </div>
 
@@ -87,7 +87,7 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <input type = "submit" id="update" class="btn hidden" name = "action" value = "Update"> 
+	      <input type = "submit" id="update" class="btn btn-warning btn-sm hidden" name = "action" value = "Update"> 
 	    </div>
 	  </div>
 
@@ -98,13 +98,13 @@
 	    </div>
 
 	    <div class="col-sm-3">
-	      <input type = "submit" id="delete" class="btn hidden" name = "action" value = "Delete"> 
+	      <input type = "submit" id="delete" class="btn btn-warning btn-sm hidden" name = "action" value = "Delete"> 
 	    </div>
 	  </div>
 
 	  <div class="form-group">
 	     <div class="col-sm-7">
-	      <input type = "submit" class="btn pull-right" name = "action" value = "Search"> 
+	      <input type = "submit" class="btn btn-primary btn-sm pull-right" name = "action" value = "Search"> 
 	    </div>
 	  </div>
 
