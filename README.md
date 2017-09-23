@@ -9,9 +9,9 @@
 * jQuery
 
 ## 2. Features
-Simple CRUD functions to manage Product List.
-All actions (Search, Create, Update, Delete) are performed in one page.
-No validate input data, no check sql injection.
+Simple CRUD functions to manage Product List.<br>
+All actions (Search, Create, Update, Delete) are performed in one page.<br>
+No validate input data, no check sql injection.<br>
 
 ## 3. Modules Description
 ### data/product.sql
