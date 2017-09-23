@@ -14,26 +14,28 @@
 
 	// define variables and set to empty values
 	$action = $prodId = $prodName = $description = $price = "";
-     
-	if ($_REQUEST["action"] != null) {
-		$action = $_REQUEST["action"] ;
-		$action = test_input($action);
-	}
-	if ($_REQUEST["prodId"]  != null) {
-		$prodId = $_REQUEST["prodId"] ;
-		$prodId = test_input($prodId);
-	} 
-	if ($_REQUEST["prodName"]  != null) {
-		$prodName = $_REQUEST["prodName"] ;
-		$prodName = test_input($prodName);
-	} 
-	if ($_REQUEST["description"]  != null) {
-		$description = $_REQUEST["description"] ;
-		$description = test_input($description);
-	} 
-	if ($_REQUEST["price"]  != null) {
-		$price = $_REQUEST["price"] ;
-		$price = test_input($price);
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		if ($_POST["action"] != null) {
+			$action = $_POST["action"] ;
+			$action = test_input($action);
+		}
+		if ($_POST["prodId"]  != null) {
+			$prodId = $_POST["prodId"] ;
+			$prodId = test_input($prodId);
+		} 
+		if ($_POST["prodName"]  != null) {
+			$prodName = $_POST["prodName"] ;
+			$prodName = test_input($prodName);
+		} 
+		if ($_POST["description"]  != null) {
+			$description = $_POST["description"] ;
+			$description = test_input($description);
+		} 
+		if ($_POST["price"]  != null) {
+			$price = $_POST["price"] ;
+			$price = test_input($price);
+		}
 	}
 
 	include_once 'model/product.php';
