@@ -8,7 +8,12 @@
 * Bootstrap for styling
 * jQuery
 
-## 2. Modules Description
+## 2. Features
+Simple CRUD functions to manage Product List.
+All actions (Search, Create, Update, Delete) are performed in one page.
+No validate input data, no check sql injection.
+
+## 3. Modules Description
 ### data/product.sql
 Create Product table and insert dumy data.
 Please run this first by psql.
@@ -31,7 +36,7 @@ Perform all CRUD functions. All actions (Search, Create, Update, Delete) are per
 ### js/crud.js
 Use jQuery to perform product's row selection action on client site
 
-## Apendix: Setting up environment memo
+## 4. Apendix: Setting up environment memo
 ### upgrade OS
 sudo yum install -y
 
